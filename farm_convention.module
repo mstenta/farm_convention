@@ -32,3 +32,21 @@ function farm_convention_farm_entity_bundle_field_info(EntityTypeInterface $enti
 
   return $fields;
 }
+
+/**
+ * Implements hook_farm_ui_theme_region_items().
+ */
+function farm_convention_farm_ui_theme_region_items(string $entity_type) {
+  $region_items = [];
+  if (in_array($entity_type, ['asset', 'log'])) {
+    $region_items = [
+      'top' => [],
+      'first' => [],
+      'second' => [
+        'convention',
+      ],
+      'bottom' => [],
+    ];
+  }
+  return $region_items;
+}
