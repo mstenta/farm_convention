@@ -1,0 +1,16 @@
+{
+  "name": "mstenta/farm_convention",
+  "description": "Tag farmOS records with their intended convention(s).",
+  "type": "drupal-module",
+  "homepage": "https://github.com/mstenta/farm_convention",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+      {
+          "name": "Michael Stenta",
+          "email": "mike@farmier.com"
+      }
+  ],
+  "require": {
+    "farmos/farmos": "^3"
+  }
+}

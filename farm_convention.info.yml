@@ -1,0 +1,6 @@
+name: Conventions
+description: Tag farmOS records with their intended convention(s).
+type: module
+package: farmOS Contrib (Experimental)
+core_version_requirement: ^10
+lifecycle: experimental
