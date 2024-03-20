@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains farm_convention.module.
+ */
+
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_farm_entity_bundle_field_info().
+ */
+function farm_convention_farm_entity_bundle_field_info(EntityTypeInterface $entity_type, string $bundle) {
+  $fields = [];
+
+  // Add a Convention term reference field to assets and logs.
+  if (in_array($entity_type->id(), ['asset', 'log'])) {
+    $options = [
+      'type' => 'entity_reference',
+      'label' => t('Convention'),
+      'description' => t('What convention does this record follow?'),
+      'target_type' => 'taxonomy_term',
+      'target_bundle' => 'convention',
+      'multiple' => TRUE,
+      'weight' => [
+        'form' => 90,
+        'view' => 90,
+      ],
+    ];
+    $fields['convention'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+  }
+
+  return $fields;
+}
