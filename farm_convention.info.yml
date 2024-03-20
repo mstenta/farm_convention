@@ -4,3 +4,6 @@ type: module
 package: farmOS Contrib (Experimental)
 core_version_requirement: ^10
 lifecycle: experimental
+dependencies:
+  - drupal:taxonomy
+  - farm_entity

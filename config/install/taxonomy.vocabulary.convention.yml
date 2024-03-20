@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - farm_convention
+name: Convention
+vid: convention
+description: 'A list of record keeping conventions.'
+weight: 0
