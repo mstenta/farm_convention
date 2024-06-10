@@ -8,9 +8,9 @@
 use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
- * Implements hook_farm_entity_bundle_field_info().
+ * Implements hook_entity_base_field_info().
  */
-function farm_convention_farm_entity_bundle_field_info(EntityTypeInterface $entity_type, string $bundle) {
+function farm_convention_entity_base_field_info(EntityTypeInterface $entity_type) {
   $fields = [];
 
   // Add a Convention term reference field to assets and logs.
@@ -27,7 +27,7 @@ function farm_convention_farm_entity_bundle_field_info(EntityTypeInterface $enti
         'view' => 90,
       ],
     ];
-    $fields['convention'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+    $fields['convention'] = \Drupal::service('farm_field.factory')->baseFieldDefinition($options);
   }
 
   return $fields;
